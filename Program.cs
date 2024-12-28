@@ -133,11 +133,7 @@ app.UseAuthorization();
 app.UseMiddleware<JwtMiddleware>();
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseStaticFiles(new StaticFileOptions
-{
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
-    RequestPath = "/Images"
-});
+
 
 
 app.MapControllers();
